@@ -4,34 +4,48 @@ const sideImageWrapper = document.getElementById('side-img-wrapper');
 let sideImageSelector;
 const buttonDown = document.getElementById('my-button-down');
 const buttonUp = document.getElementById('my-button-up');
-let counter = 1;
+let counter = 0;
+let sideImageCounter = 1 ; 
 mainImageWrapper.innerHTML = images[0];
 
 for(let i=0; i<5 ; i++){
     sideImageWrapper.innerHTML += images[i];
 }
-let sideImageSelectorPrevious = sideImageWrapper.querySelector('img:nth-child('+1+')');
-console.log(sideImageSelectorPrevious);
+
+let sideImageSelectorPrevious = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
+sideImageSelectorPrevious.classList.add('active');
 
 function changeImageDown(){
     sideImageSelectorPrevious.classList.remove('active');
+    counter++;
+    sideImageCounter++;
+    if(counter > 4 ){
+        counter = 0;
+    } 
+    if(sideImageCounter > 5){
+        sideImageCounter=1;
+    }
     mainImageWrapper.innerHTML = images[counter];
-    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+(counter+1)+')');
+    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
     sideImageSelectorPrevious = sideImageSelector;
     sideImageSelector.classList.add('active');
-    console.log(sideImageSelector);
-    if(counter >= 4 ){
-        counter = -1;
-    }
-    counter++;
 }
 
 function changeImageUp(){
     counter--;
-    mainImageWrapper.innerHTML = images[counter];
-    if(counter <= 0 ){
-        counter = 5;
+    sideImageCounter--;
+    if(counter < 0 ){
+        counter = 4;
     }
+    if (sideImageCounter < 1){
+        sideImageCounter= 5 ;
+    }
+    sideImageSelectorPrevious.classList.remove('active');
+    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
+    sideImageSelectorPrevious = sideImageSelector;
+    sideImageSelector.classList.add('active');
+    mainImageWrapper.innerHTML = images[counter];
+
 }
 
 buttonDown.addEventListener('click', changeImageDown);
