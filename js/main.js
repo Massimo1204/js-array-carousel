@@ -16,7 +16,6 @@ let sideImageSelectorPrevious = sideImageWrapper.querySelector('img:nth-child('+
 sideImageSelectorPrevious.classList.add('active');
 
 function changeImageDown(){
-    sideImageSelectorPrevious.classList.remove('active');
     counter++;
     sideImageCounter++;
     if(counter > 4 ){
@@ -25,6 +24,7 @@ function changeImageDown(){
     if(sideImageCounter > 5){
         sideImageCounter=1;
     }
+    sideImageSelectorPrevious.classList.remove('active');
     mainImageWrapper.innerHTML = images[counter];
     sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
     sideImageSelectorPrevious = sideImageSelector;
@@ -41,10 +41,10 @@ function changeImageUp(){
         sideImageCounter= 5 ;
     }
     sideImageSelectorPrevious.classList.remove('active');
+    mainImageWrapper.innerHTML = images[counter];
     sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
     sideImageSelectorPrevious = sideImageSelector;
     sideImageSelector.classList.add('active');
-    mainImageWrapper.innerHTML = images[counter];
 
 }
 
