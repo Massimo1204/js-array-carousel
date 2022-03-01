@@ -5,19 +5,23 @@ let sideImageSelector;
 const buttonDown = document.getElementById('my-button-down');
 const buttonUp = document.getElementById('my-button-up');
 let counter = 1;
-
 mainImageWrapper.innerHTML = images[0];
 
 for(let i=0; i<5 ; i++){
     sideImageWrapper.innerHTML += images[i];
 }
+let sideImageSelectorPrevious = sideImageWrapper.querySelector('img:nth-child('+1+')');
+console.log(sideImageSelectorPrevious);
 
 function changeImageDown(){
+    sideImageSelectorPrevious.classList.remove('active');
     mainImageWrapper.innerHTML = images[counter];
-    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+counter+++')');
+    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+(counter+1)+')');
+    sideImageSelectorPrevious = sideImageSelector;
+    sideImageSelector.classList.add('active');
     console.log(sideImageSelector);
     if(counter >= 4 ){
-        counter = 0;
+        counter = -1;
     }
     counter++;
 }
