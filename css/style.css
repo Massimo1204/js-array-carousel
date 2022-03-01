@@ -16,11 +16,27 @@
 .main-img{
     width: 85%;
     height: 100%;
+    position: relative;
+    color: white;
 }
 
 .main-img img{
     width: 100%;
     height: 100%;
+}
+
+.main-img h3{
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.main-img p{
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 1.5rem;
 }
 
 .side-img{
@@ -32,27 +48,30 @@
     height: 20%;
     width: 100%;
     filter: brightness(.5);
+    border : 1px solid black
 }
 
 .active{
     filter: brightness(100%)!important;
-    border: 3px solid white;
+    border: 3px solid white !important;
 }
 
 .my-button{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: grey;
-    line-height: 50px;
+    background-color: rgb(214, 211, 211);
+    line-height: 40px;
+    right: 7.5%;
+    transform: translateX(50%);
+    cursor: pointer;
+    font-size: 2rem;
 }
 
 #my-button-down{
-    right: 20px;
     bottom: 10px;
 }
 
 #my-button-up{
-    right: 20px;
     top: 10px;
 }
