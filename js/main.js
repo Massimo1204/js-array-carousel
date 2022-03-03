@@ -15,7 +15,7 @@ for(let i=0; i<5 ; i++){
     sideImageWrapper.innerHTML += images[i];
 }
 
-let sideImageSelectorPrevious = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
+let sideImageSelectorPrevious = sideImageWrapper.querySelector('#side-img-wrapper img:nth-child('+sideImageCounter+')');
 sideImageSelectorPrevious.classList.add('active');
 
 function changeImageDown(){
@@ -30,7 +30,7 @@ function changeImageDown(){
     sideImageSelectorPrevious.classList.remove('active');
     mainImageWrapper.innerHTML = images[counter];
     mainImageWrapper.innerHTML += descriptions[counter];
-    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
+    sideImageSelector = sideImageWrapper.querySelector('#side-img-wrapper img:nth-child('+sideImageCounter+')');
     sideImageSelectorPrevious = sideImageSelector;
     sideImageSelector.classList.add('active');
 }
@@ -47,7 +47,7 @@ function changeImageUp(){
     sideImageSelectorPrevious.classList.remove('active');
     mainImageWrapper.innerHTML = images[counter];
     mainImageWrapper.innerHTML += descriptions[counter];
-    sideImageSelector = sideImageWrapper.querySelector('img:nth-child('+sideImageCounter+')');
+    sideImageSelector = sideImageWrapper.querySelector('#side-img-wrapper img:nth-child('+sideImageCounter+')');
     sideImageSelectorPrevious = sideImageSelector;
     sideImageSelector.classList.add('active');
 
