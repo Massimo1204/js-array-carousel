@@ -1,4 +1,4 @@
-const images = ['<img src="/img/01.jpg"  alt="img calm lake">' ,'<img src="/img/02.jpg"  alt="img Svizzera">', '<img src="/img/03.jpg"  alt="img London"></img>','<img src="/img/04.jpg"  alt="img city"></img>','<img src="/img/05.jpg"  alt="img beach">'];
+const images = ['<img src="img/01.jpg"  alt="img calm lake">' ,'<img src="img/02.jpg"  alt="img Svizzera">', '<img src="img/03.jpg"  alt="img London"></img>','<img src="img/04.jpg"  alt="img city"></img>','<img src="img/05.jpg"  alt="img beach">'];
 const descriptions = ["<h3>Lago</h3><p>Solo, di fronte ad un immenso lago fui ammirando e riflettendo..</p>","<h3>Svizzera</h3><p>Lorem ipsum</p>","<h3>Londra</h3><p>Come and visit 221b of Baker Street</p>","<h3>City bello</h3><p>Somewhere in the world</p>","<h3>Beach</h3><p>Weeeeeeeeeeeeeee</p>"];
 const mainImageWrapper = document.getElementById('main-img-wrapper');
 const sideImageWrapper = document.getElementById('side-img-wrapper');
